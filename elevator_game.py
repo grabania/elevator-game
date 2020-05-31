@@ -1,9 +1,10 @@
 import time
+items = []
 
 
 def print_pause(message_to_print):
     print(message_to_print)
-    time.sleep(2)
+    time.sleep(1)
 
 
 print_pause("You have just arrived at your new job!")
@@ -19,6 +20,14 @@ while True:
         print_pause("You push the button for the first floor.")
         print_pause("After a few moments, you find "
                     "yourself in the lobby.")
+        if "ID card" in items:
+            print_sleep("The clerk greets you, but she has already "
+                        "given you your ID card, so there is nothing "
+                        "more to do here now.")
+        else:
+            print_sleep("The clerk greets you and gives you your ID "
+                        "card.")
+            items.append("ID card")
     elif floor == '2':
         print_pause("You push the button for the second floor.")
         print_pause("After a few moments, you find yourself "
@@ -27,5 +36,6 @@ while True:
         print_pause("You push the button for the third floor.")
         print_pause("After a few moments, you find yourself "
                     "in the engineering department.")
+        print_pause("Where would you like to go next?")
 
     print_pause("Where would you like to go next?")
